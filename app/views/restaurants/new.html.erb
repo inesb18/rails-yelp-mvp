@@ -1,0 +1,12 @@
+<h2>New restaurant</h2>
+
+ <div class="creation-restaurant-form">
+      <%= simple_form_for(@restaurant) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :phone_number %>
+        <%= f.label :category %>
+        <%= f.select :category, ["chinese", "italian", "japanese", "french", "belgian"], include_blank: false %>
+        <%= f.submit %>
+      <% end %>
+</div>
