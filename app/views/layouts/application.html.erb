@@ -12,6 +12,14 @@
   </head>
 
   <body>
+    <div class="navbar">
+      <div class="list">
+        <%= link_to "Back to list", restaurants_path %>
+      </div>
+      <div class="new-restaurant">
+        <%= link_to "Add a new restaurant", new_restaurant_path %>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

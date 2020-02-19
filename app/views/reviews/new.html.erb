@@ -1,4 +1,4 @@
-<h2>New review</h2>
+<h2>New review for <%= @restaurant.name %></h2>
  <div class="creation-review-form">
       <%= simple_form_for [@restaurant,@review] do |f| %>
         <%= f.input :content %>
