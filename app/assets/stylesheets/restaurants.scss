@@ -30,27 +30,15 @@
 
 .reviews {
   .review-list-banner {
-    display: flex;
-    justify-content: space-between;
     h3 {
       font-weight: bold;
       font-size: 22px;
-    }
-    .add-review {
-      a {
-        color: #EA604B;
-      }
     }
   }
   ul {
     list-style: none;
     padding: 0 0;
     li {
-      border: 1px solid #EA604B;
-      border-radius: 3px;
-      padding: 10px;
-      font-size: 12px;
-      margin-bottom: 10px;
       .review-content {
         margin-top: 10px;
       }
@@ -59,4 +47,12 @@
       }
     }
   }
+}
+
+.review-card {
+  border: 1px solid #EA604B;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 12px;
+  margin-bottom: 10px;
 }
