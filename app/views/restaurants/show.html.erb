@@ -29,5 +29,7 @@
     <div class="review-rating"><%= review.rating %></div>
     <div class="review-content"><%= review.content %></div>
   <% end %>
+  <br>
+  <%= link_to "Add a new review", new_restaurant_review_path(@restaurant) %>
 
 </div>

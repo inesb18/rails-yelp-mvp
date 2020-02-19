@@ -1,0 +1,9 @@
+<h2>New review</h2>
+ <div class="creation-review-form">
+      <%= simple_form_for [@restaurant,@review] do |f| %>
+        <%= f.input :content %>
+        <%= f.label :Rating %>
+        <%= f.select :rating, [0,1,2,3,4,5], include_blank: false %>
+        <%= f.submit %>
+      <% end %>
+</div>
