@@ -1,14 +1,14 @@
-<h2 class="title-restaurant-name"><%= @restaurant.name %></h2>
+<h2 class="restaurant-name-in-page"><%= @restaurant.name %></h2>
 
-<div class="addres">
+<div class="address">
   <h3>Address</h3>
   <p><%= @restaurant.address %></p>
 </div>
 
 
-<% if @restaurant.phone_number %>
+<% if @restaurant.phone_number && !@restaurant.phone_number.empty? %>
 
-  <div class="phone number">
+  <div class="phone-number">
     <h3>Phone number</h3>
     <p><%= @restaurant.phone_number %></p>
   </div>
@@ -17,17 +17,53 @@
 
 <div class="reviews">
 
-  <h3>Reviews</h3>
+  <div class="review-list-banner">
+    <h3>Reviews</h3>
+    <div class="add-review">
+      <%= link_to new_restaurant_review_path(@restaurant) do%>
+        <i class="fas fa-plus"></i> Add a new review
+      <% end %>
+    </div>
+  </div>
 
   <% if @restaurant.reviews.empty? %>
-  No review yet
+
+    <p>No review yet</p>
+
+  <% else %>
+
+  <div class="review-list">
+
+    <ul>
+
+      <% @restaurant.reviews.each do |review| %>
+
+        <li>
+
+          <div class="review-rating">
+            <% full_stars = review.rating %>
+            <% empty_stars = 5 - full_stars %>
+            <% full_stars.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% empty_stars.times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+          </div>
+          <div class="review-content"><%= review.content %></div>
+
+        </li>
+
+      <% end %>
+
+    </ul>
+
+  </div>
+
+
   <% end %>
 
-  <% @restaurant.reviews.each do |review| %>
-    <div class="review-rating"><%= review.rating %></div>
-    <div class="review-content"><%= review.content %></div>
-  <% end %>
   <br>
-  <%= link_to "Add a new review", new_restaurant_review_path(@restaurant) %>
+
 
 </div>

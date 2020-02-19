@@ -11,3 +11,39 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import "restaurants.scss";
+@import "reviews.scss";
+
+$orange: #EA604B;
+
+.banner {
+  background: $orange;
+  padding: 16px 30px;
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: white;
+  }
+  a:hover {
+    font-weight: bolder;
+    text-decoration: none;
+  }
+}
+
+.page {
+  width: 60%;
+  margin: 30px auto;
+}
+
+.button {
+  background-color: white;
+  color: $orange;
+  border: 1px solid $orange;
+  border-radius: 3px;
+  padding: 6px 14px;
+  &:hover {
+    background-color: $orange;
+    color: white;
+  }
+}
