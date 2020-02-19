@@ -4,5 +4,5 @@ class Restaurant < ApplicationRecord
   validates :address, presence: true
   validates :category, presence: true,
                        inclusion: { in: ['chinese', 'italian', 'japanese', 'french', 'belgian'] }
-  validates :phone_number, format: { with: /\A[\d|+|\s|-]+\z/ }
+  validates :phone_number, allow_nil: true, format: { with: /\A[\d|\W|x]+\z/ }
 end
