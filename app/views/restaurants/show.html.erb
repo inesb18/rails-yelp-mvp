@@ -62,8 +62,13 @@
 
   <div class="creation-review-form review-card">
     <%= simple_form_for [@restaurant,@review] do |f| %>
-      <div class="form-group">
-        <%= f.input :rating, as: :select, collection: [0,1,2,3,4,5], include_blank: false, input_html: {class: "form-control"} %>
+      <div class="rating-stars">
+        <%= hidden_field_tag :rating, 0, :id => "rating-input" %>
+        <i class="far fa-star" id="1"></i>
+        <i class="far fa-star" id="2"></i>
+        <i class="far fa-star" id="3"></i>
+        <i class="far fa-star" id="4"></i>
+        <i class="far fa-star" id="5"></i>
       </div>
       <div class="form-group">
         <%= f.input :content, class: 'form-control' %>
