@@ -1,0 +1,33 @@
+<%= link_to "Back to list", restaurants_path %>
+
+<h2 class="title-restaurant-name"><%= @restaurant.name %></h2>
+
+<div class="addres">
+  <h3>Address</h3>
+  <p><%= @restaurant.address %></p>
+</div>
+
+
+<% if @restaurant.phone_number %>
+
+  <div class="phone number">
+    <h3>Phone number</h3>
+    <p><%= @restaurant.phone_number %></p>
+  </div>
+
+<% end %>
+
+<div class="reviews">
+
+  <h3>Reviews</h3>
+
+  <% if @restaurant.reviews.empty? %>
+  No review yet
+  <% end %>
+
+  <% @restaurant.reviews.each do |review| %>
+    <div class="review-rating"><%= review.rating %></div>
+    <div class="review-content"><%= review.content %></div>
+  <% end %>
+
+</div>
