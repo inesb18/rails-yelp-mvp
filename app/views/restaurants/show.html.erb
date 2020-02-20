@@ -64,6 +64,8 @@
     <%= simple_form_for [@restaurant,@review] do |f| %>
       <div class="rating-stars">
         <%= hidden_field_tag :rating, 0, :id => "rating-input" %>
+        <span>Rating<span>
+        <i class="far fa-star hidden" id="0"></i>
         <i class="far fa-star" id="1"></i>
         <i class="far fa-star" id="2"></i>
         <i class="far fa-star" id="3"></i>

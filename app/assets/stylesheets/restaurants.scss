@@ -56,3 +56,13 @@
   font-size: 12px;
   margin-bottom: 10px;
 }
+
+.rating-stars {
+  margin-bottom: 12px;
+  i {
+    color: #EA604B;
+  }
+  .hidden {
+    opacity: 0;
+  }
+}
