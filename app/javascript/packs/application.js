@@ -15,7 +15,6 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
 
 const ratingForm = document.querySelector(".rating-stars");
 
@@ -29,28 +28,18 @@ const fill = (element) => {
   element.classList.add("fas");
 };
 
-const emptyAll = () => {
-  ratingForm.querySelectorAll("i").forEach((star) => {
-    empty(star);
-  })
-}
-
 const rates = (nb_stars) => {
-  if (nb_stars === '0') {
-    emptyAll();
-  } else {
-    let element = document.getElementById(nb_stars);
-    fill(element);
-    while ( element = element.previousSibling ){
-      if (element.tagName === 'I') {
-        fill(element);
-      }
+  let element = document.getElementById(nb_stars);
+  fill(element);
+  while ( element = element.previousSibling ){
+    if (element.tagName === 'I') {
+      fill(element);
     }
-    element = document.getElementById(nb_stars);
-    while ( element = element.nextSibling ){
-      if (element.tagName === 'I') {
-        empty(element);
-      }
+  }
+  element = document.getElementById(nb_stars);
+  while ( element = element.nextSibling ){
+    if (element.tagName === 'I') {
+      empty(element);
     }
   }
 }
